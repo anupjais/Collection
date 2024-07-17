@@ -1,11 +1,10 @@
 package MyStack;
-//import java.util.ArrayList;
-import java.util.Arrays;
-public class ArrayStackExample
+import java.util.ArrayList;
+public class ArrayListStackExample
 {
 	public static void main(String[] args)
 	{
-		UserArrayStack stack = new UserArrayStack();
+		UserArrayListStack stack = new UserArrayListStack();
 		System.out.println("Is list empty : "+stack.empty());
 		for(int i=5; i<105; i+=5)
 			stack.push(i);
@@ -18,37 +17,26 @@ public class ArrayStackExample
 	}
 }
 
-class UserArrayStack
+class UserArrayListStack<E>
 {
-	int[] list = new int[10];
-	int len = -1;
-	UserArrayStack()
-	{
-		
-	}
-	UserArrayStack(int cap)
-	{
-		list = new int[cap];
-	}
+	ArrayList<E> list = new ArrayList<>(10);
 	
-	public int push(int e)
+	public E push(E e)
 	{
-//		if
-//		list.add(e);
-//		return e;
+		list.add(e);
+		return e;
 	}
-	public int pop()
+	public E pop()
 	{
-//		return list.removeLast();
+		return list.removeLast();
 	}
-	public int peek()
+	public E peek()
 	{
-//		return list.getLast();
+		return list.getLast();
 	}
 	public boolean empty()
 	{
-		if(len)
-//		return list.isEmpty();
+		return list.isEmpty();
 	}
 	public String toString()
 	{
@@ -56,3 +44,4 @@ class UserArrayStack
 	}
 	
 }
+

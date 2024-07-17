@@ -15,7 +15,7 @@ public class ElementSorting
 			list.add(sc.nextInt());
 		
 		System.out.println(list);
-		list.forEach((ele1, ele2) ->  { return ele1 > ele2});
+//		list.forEach((ele1, ele2) ->  { return ele1 > ele2});
 		System.out.println(list);
 	}
 

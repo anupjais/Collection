@@ -20,39 +20,66 @@ public class ArrayStackExample
 
 class UserArrayStack
 {
-	int[] list = new int[10];
+	Object[] list = new Object[10];
 	int len = -1;
 	UserArrayStack()
 	{
-		
 	}
 	UserArrayStack(int cap)
 	{
-		list = new int[cap];
+		list = new Object[cap];
 	}
 	
-	public int push(int e)
+	public Object push(Object e)
 	{
-//		if
-//		list.add(e);
-//		return e;
+		if(!isFull())
+		{
+			list[++len] = e;
+		}
+		else
+		{
+			Object[] list1 = new Object[list.length * 2];
+			for(int i=0; i<list1.length; i++)
+			{
+				if(i<list.length-1)
+				{
+					list1[i] = list[i];
+				}
+				else
+				{
+					len = i;
+					break;
+				}
+			}
+		}
+		return e;
 	}
-	public int pop()
+	public Object pop()
 	{
-//		return list.removeLast();
+		Object obj = list[len-1];
+		list[len-1] = null;
+//		--len;
+			return obj;
 	}
-	public int peek()
+	public Object peek()
 	{
-//		return list.getLast();
+		return list[len];
 	}
 	public boolean empty()
 	{
-		if(len)
-//		return list.isEmpty();
+		if(len < (list.length))
+			return true;
+		return false;
 	}
 	public String toString()
 	{
-		return list.toString();
+		return Arrays.toString(list);
 	}
 	
+	private boolean isFull()
+	{
+		if(len == list.length-1)
+			return true;
+		return false;
+	}
 }

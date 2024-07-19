@@ -15,16 +15,18 @@ public class EnumerationExample
 		
 		Enumeration e = v.elements();
 		Vector<Integer> v2 = new Vector<>();
+		Vector<String> v3 = new Vector<>();
 		while(e.hasMoreElements())
 		{
 			Object obj = e.nextElement();
-			if(obj instanceof Integer)
+//			if(obj instanceof Integer)
+			if(obj instanceof String)
 			{
-				Integer num = (Integer)obj;
-				v2.addElement(num);
+				String num = (String)obj;
+				v3.addElement(num);
 			}
 		}
-		System.out.println(v2);
+		System.out.println(v3);
 		
 	}
 

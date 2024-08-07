@@ -41,7 +41,7 @@ class Resturent
 		System.out.print("Contact number : ");
 		long conNum = sc.nextLong();
 		ArrayList<String> food = new ArrayList<String>();
-		System.out.print("Enter the quantity food : ");
+		System.out.print("Enter the quantity of food : ");
 		int qnt = sc.nextInt();
 		sc.nextLine();
 		for(int i=1; i<=qnt; i++)
@@ -80,20 +80,20 @@ class Resturent
 	{
 		System.out.println("***** Update Bill *****");
 		ListIterator<CustomerBill> itr = list.listIterator();
-		System.out.println("\n Enter a CustomerId : ");
+		System.out.print("\n Enter a CustomerId : ");
 		int cusId = sc.nextInt();
 		
 		for (CustomerBill n : list)
 		{
             if (n.cusId == cusId)
             {
-            	System.out.println("Update Bill : ");
+            	System.out.print("Update Bill : ");
             	float uBill = sc.nextFloat();
                 n.bill = uBill;
                 break;
             }
         }
-		System.out.println("\n 1. Name \n 2. Food item \n 3. Bill \n 0. EXIT");
+		/*System.out.println("\n 1. Name \n 2. Food item \n 3. Bill \n 0. EXIT");
 		System.out.print("\nEnter your option : ");
 		int opt = sc.nextInt();
 		switch(opt)
@@ -127,7 +127,8 @@ class Resturent
 					CustomerBill n = itr.next();
 					if(cusId == n.cusId)
 					{
-						n.bill.set();
+//						n.set(bill);
+//						n.bill.set();
 					}
 				}
 				break;
@@ -138,12 +139,12 @@ class Resturent
 			}
 			default :
 				System.out.println("Incorrect Input");
-		}
+		}*/
 	}
 	void deleteBill()
 	{
 		ListIterator<CustomerBill> itr = list.listIterator();
-		System.out.println("\n Enter a bill number : ");
+		System.out.print("\n Enter a bill number : ");
 		int cusId = sc.nextInt();
 		while (itr.hasNext())
 		{
